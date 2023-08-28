@@ -179,8 +179,13 @@ a {
     padding: 9px 25px;
     color: white;
     background-color: #dd7339;
+    border: 1px solid #dd7339;
     font-size: 18px;
     border-radius: 9px;
+}
+.form-container .buttons-wrapper .submit-form-btn {
+    padding: 10px 40px;
+    font-weight: 20px;
 }
 .form-container .buttons-wrapper .back-to-prev-step-btn {
     font-size: 17px;

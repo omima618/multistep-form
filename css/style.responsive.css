@@ -18,8 +18,8 @@
         padding: 0 15px;
     }
     .steps-header .steps-wrapper .step .step-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
     }
     .steps-header .steps-wrapper .step .step-icon svg path {
         fill: #eca077;
@@ -29,8 +29,8 @@
         height: 40px;
     }
     .steps-header .steps-wrapper .step.active .step-icon svg {
-        width: 19px;
-        height: 19px;
+        width: 20px;
+        height: 20px;
     }
     .steps-header .steps-wrapper .step .step-desc .step-title {
         font-size: 17px;
@@ -60,6 +60,17 @@
         height: 35px;
     }
     .steps-header .steps-wrapper .step {
+        padding: 0 5px;
+    }
+    .steps-header .steps-wrapper .step.active {
         padding: 0 10px;
+    }
+    .steps-header .steps-wrapper .step .step-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+    .steps-header .steps-wrapper .step.active .step-icon svg {
+        width: 19px;
+        height: 19px;
     }
 }
