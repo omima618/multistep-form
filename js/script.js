@@ -1,5 +1,3 @@
-import products from "../data/products.js";
-import questions from "../data/steps.js";
 function renderProducts(product) {
     const productMarkup = `
     <div class="product-wrapper">
@@ -16,23 +14,17 @@ function renderProducts(product) {
 }
 
 function getProductsHandler() {
-    // var MSF_fetchProductsRes = fetch('../data/json/products.json');
-    // MSF_fetchProductsRes.then(function (res) {
-    //     return res.json();
-    // }).then(function (data) {
-    //     const randomProduct = data.products[Math.floor(Math.random()*data.products.length)];
-    //     document.querySelector('.preferences-test-done .products-container').insertAdjacentHTML('beforeend', renderProducts(randomProduct));
-    //     document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
-    //     setTimeout(() => {
-    //         document.querySelector('.preferences-test-done').classList.remove('switch-effect');
-    //     }, 600);
-    // });
-    const randomProduct = products[Math.floor(Math.random()*products.length)];
-    document.querySelector('.preferences-test-done .products-container').insertAdjacentHTML('beforeend', renderProducts(randomProduct));
-    document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
-    setTimeout(() => {
-        document.querySelector('.preferences-test-done').classList.remove('switch-effect');
-    }, 600);
+    var MSF_fetchProductsRes = fetch('../data/products.json');
+    MSF_fetchProductsRes.then(function (res) {
+        return res.json();
+    }).then(function (data) {
+        const randomProduct = data.products[Math.floor(Math.random()*data.products.length)];
+        document.querySelector('.preferences-test-done .products-container').insertAdjacentHTML('beforeend', renderProducts(randomProduct));
+        document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
+        setTimeout(() => {
+            document.querySelector('.preferences-test-done').classList.remove('switch-effect');
+        }, 600);
+    });
 }
 
 function renderStepsHeader(questions) {
@@ -120,15 +112,13 @@ function renderFormStepQuestions(questions) {
 }
 
 function getStepsHandler() {
-    // var MSF_fetchStepsRes = fetch('../data/json/steps.json');
-    // MSF_fetchStepsRes.then(function (res) {
-    //     return res.json();
-    // }).then(function (data) {
-    //     renderStepsHeader(data.questions);
-    //     renderFormStepQuestions(data.questions);
-    // });
-    renderStepsHeader(questions);
-    renderFormStepQuestions(questions);
+    var MSF_fetchStepsRes = fetch('../data/steps.json');
+    MSF_fetchStepsRes.then(function (res) {
+        return res.json();
+    }).then(function (data) {
+        renderStepsHeader(data.questions);
+        renderFormStepQuestions(data.questions);
+    });
 }
 
 getStepsHandler();
