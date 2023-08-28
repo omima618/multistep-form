@@ -14,7 +14,7 @@ function renderProducts(product) {
 }
 
 function getProductsHandler() {
-    var MSF_fetchProductsRes = fetch('https://github.com/omima618/multistep-form/blob/main/data/products.json');
+    var MSF_fetchProductsRes = fetch('../data/products.json');
     MSF_fetchProductsRes.then(function (res) {
         return res.json();
     }).then(function (data) {
@@ -112,7 +112,7 @@ function renderFormStepQuestions(questions) {
 }
 
 function getStepsHandler() {
-    var MSF_fetchStepsRes = fetch('https://github.com/omima618/multistep-form/blob/main/data/steps.json');
+    var MSF_fetchStepsRes = fetch('../data/steps.json');
     MSF_fetchStepsRes.then(function (res) {
         return res.json();
     }).then(function (data) {
