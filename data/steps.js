@@ -3,7 +3,7 @@ export default [
         question: ' أفضل طريقة لتقضي عيد ميلادكِ؟',
         answers: {
             options: ['حفلة عائلية', 'سهرة مع الأصحاب', 'عشاء رومانسي', 'يوم مليء بالمفاجآت'],
-            images: ['../images/q1-a1.jpg', '../images/q1-a2.jpg', '../images/q1-a3.jpg', '../images/q1-a4.jpg'],
+            images: ['./images/q1-a1.jpg', './images/q1-a2.jpg', './images/q1-a3.jpg', './images/q1-a4.jpg'],
         },
         step: {
             stepNum: 1,
@@ -20,7 +20,7 @@ export default [
                 'أرتّب غرفتي وأشرب القهوة كأي يوم عادي',
                 'أتصل بصديقاتي وأتحدث معهن عن كل تفصيل من الليلة السابقة',
             ],
-            images: ['../images/q2-a1.jpg', '../images/q2-a2.jpg', '../images/q2-a3.jpg', '../images/q2-a4.jpg'],
+            images: ['./images/q2-a1.jpg', './images/q2-a2.jpg', './images/q2-a3.jpg', './images/q2-a4.jpg'],
         },
         step: {
             stepNum: 2,
@@ -32,7 +32,7 @@ export default [
         question: 'ما هو لون الطبيعة الذي يلهمك؟',
         answers: {
             options: ['ألوان الخريف مثل الأحمر والبرتقالي', 'ألوان البحر والسماء مثل الأزرق والأبيض', 'ألوان الزهور والحدائق مثل الوردي والأخضر', 'ألوان الصحاري والجبال مثل البني والرمادي'],
-            images: ['../images/q3-a1.png', '../images/q3-a2.png', '../images/q3-a3.png', '../images/q3-a4.png'],
+            images: ['./images/q3-a1.png', './images/q3-a2.png', './images/q3-a3.png', './images/q3-a4.png'],
         },
         step: {
             stepNum: 3,
@@ -44,7 +44,7 @@ export default [
         question: ' أنتِ تتحضّرين لسهرة مهمّة، أي فستان تختارين من الموديلات التالية؟',
         answers: {
             options: ['فستان ذات ألوان دافئة', ' فستان بسيط ذات لون هادئ', 'فستان ذات لون داكن', 'فستان ذات اطلالة جريئة'],
-            images: ['../images/q4-a1.jpeg', '../images/q4-a2.jpeg', '../images/q4-a3.jpeg', '../images/q4-a4.jpg'],
+            images: ['./images/q4-a1.jpeg', './images/q4-a2.jpeg', './images/q4-a3.jpeg', './images/q4-a4.jpg'],
         },
         step: {
             stepNum: 4,
@@ -56,7 +56,7 @@ export default [
         question: 'اختاري أحمر الشفاه الذي يرافقكِ دائماً',
         answers: {
             options: ['روج فوشيا ملفت', 'روج برّاق', 'روج أحمر صارخ', 'روج نود مات'],
-            images: ['../images/q5-a1.jpeg', '../images/q5-a2.jpeg', '../images/q5-a3.jpeg', '../images/q5-a4.jpeg'],
+            images: ['./images/q5-a1.jpeg', './images/q5-a2.jpeg', './images/q5-a3.jpeg', './images/q5-a4.jpeg'],
         },
         step: {
             stepNum: 4,
@@ -68,7 +68,7 @@ export default [
         question: 'ما العنصر الأكثر جاذبيّة في شكلكِ؟',
         answers: {
             options: ['حركتي الدائمة', 'إبتسامتي الناعمة', 'عيناي', 'شفتاي'],
-            images: ['../images/q6-a1.jpg', '../images/q6-a2.jpg', '../images/q6-a3.jpg', '../images/q6-a4.jpg'],
+            images: ['./images/q6-a1.jpg', './images/q6-a2.jpg', './images/q6-a3.jpg', './images/q6-a4.jpg'],
         },
         step: {
             stepNum: 6,
@@ -80,7 +80,7 @@ export default [
         question: 'في أي بلد تفضّلين العيش؟',
         answers: {
             options: ['باريس', 'اليابان', 'الولايات المتحدة الأميركية', 'دبي'],
-            images: ['../images/q7-a1.jpg', '../images/q7-a2.jpg', '../images/q7-a3.jpg', '../images/q7-a4.jpg'],
+            images: ['./images/q7-a1.jpg', './images/q7-a2.jpg', './images/q7-a3.jpg', './images/q7-a4.jpg'],
         },
         step: {
             stepNum: 7,
@@ -92,7 +92,7 @@ export default [
         question: 'أي صف أونلاين ترغبين بالمشاركة به؟',
         answers: {
             options: ['طبخ', 'زرع وتشجير', 'لغة', 'مكياج وجمال'],
-            images: ['../images/q8-a1.jpg', '../images/q8-a2.jpg', '../images/q8-a3.jpg', '../images/q8-a4.jpg'],
+            images: ['./images/q8-a1.jpg', './images/q8-a2.jpg', './images/q8-a3.jpg', './images/q8-a4.jpg'],
         },
         step: {
             stepNum: 8,
