@@ -1,3 +1,10 @@
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+}
 @media (max-width: 768px) {
     .container {
         width: 100%;
@@ -5,7 +12,7 @@
         padding: 10px;
     }
     .steps-header {
-        margin: 0 10px 20px;
+        margin: 0;
     }
     .steps-header .steps-wrapper .step {
         padding: 0 15px;
@@ -28,8 +35,14 @@
     .steps-header .steps-wrapper .step .step-desc .step-title {
         font-size: 17px;
     }
+    .steps-header .steps-wrapper .step.active {
+        gap: 0;
+    }
+    .steps-header .steps-wrapper .step.active .step-desc .step-num {
+        display: none;
+    }
     .form-container {
-        padding: 20px 10px;
+        padding: 20px 0;
     }
     .form-step.active {
         gap: 60px;
@@ -39,5 +52,14 @@
     }
     .question-wrapper .answers-wrapper .answer-wrapper .answer {
         font-size: 16px;
+    }
+}
+@media (max-width: 500px) {
+    .steps-header .steps-wrapper .step.active .step-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .steps-header .steps-wrapper .step {
+        padding: 0 10px;
     }
 }

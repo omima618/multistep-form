@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style.responsive.css">
 </head>
@@ -19,14 +22,15 @@
                     <div class="form-steps-wrapper"></div>
                     <div class="buttons-wrapper no-prev" data-current-step="1">
                         <button class="back-to-prev-step-btn" data-move="backward">السابق</button>
-                        <button type="submit" class="move-to-next-step-btn" data-move="forward">التالي</button>
+                        <button class="move-to-next-step-btn" data-move="forward">التالي</button>
+                        <button type="submit" class="submit-form-btn hidden" data-action="submit">تأكيد</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="preferences-test-done switch-effect hidden">
             <div class="result-wrapper">
-                <h2 class="result-title">العطور المناسبة لشخصيتك هو</h2>
+                <h2 class="result-title">العطر المناسب لشخصيتك هو</h2>
                 <div class="products-container"></div>
                 <button class="start-over">إعادة الإختبار</button>
             </div>
