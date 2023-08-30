@@ -232,6 +232,8 @@ document.querySelector('.back-to-gender-selection').addEventListener('click', fu
             genderWrapper.classList.remove('switch-effect');
             document.querySelector('.steps-header .steps-wrapper').innerHTML = '';
             document.querySelector('.multistep-form-wrapper .form-steps-wrapper').innerHTML = '';
+            document.querySelector('.buttons-wrapper').classList.add('no-prev');
+            document.querySelector('.buttons-wrapper').dataset.currentStep = 1;
         }, 200);
     }, 600);
 })

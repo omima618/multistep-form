@@ -37,7 +37,7 @@
             {
                 "question": "أي المشروبات تفضل؟",
                 "answers": {
-                    "options": ["المشروبات الساخنة", "مشروبات الفواكه", "المشروبات حمضية", "القهوة"],
+                    "options": ["المشروبات الساخنة", "مشروبات الفواكه", "مشروبات حمضية", "القهوة"],
                     "images": ["images/male/q4-a1.jpg", "images/male/q4-a2.jpg", "images/male/q4-a3.jpg", "images/male/q4-a4.jpg"]
                 },
                 "step": {
