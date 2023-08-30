@@ -4,8 +4,10 @@ const showFormBtn = document.querySelector('.gender-selection .show-form');
 
 genderOptions.forEach((gender, i) => {
     gender.addEventListener('click', function () {
-        i === 0 ? genderOptions[i + 1].classList.remove('selected') : genderOptions[i - 1].classList.remove('selected');
-        this.classList.add('selected');
+        if (!this.classList.contains('selected')) {
+            i === 0 ? genderOptions[i + 1].classList.remove('selected') : genderOptions[i - 1].classList.remove('selected');
+            this.classList.add('selected');
+        } 
         showFormBtn.dataset.selectedGender = this.dataset.gender;
         showFormBtn.classList.remove('hidden');
         window.scroll({ top: showFormBtn.getBoundingClientRect().top + 50, behavior: 'smooth' });
@@ -30,7 +32,7 @@ function renderStepsHeader(questions) {
     const steps = questions.map((question) => {
         return question.step;
     });
-    const stepWrapper = document.querySelector('.steps-wrapper');
+    const stepWrapper = document.querySelector('.steps-header .steps-wrapper');
     steps.forEach(function (step, i) {
         const stepMarkup = `
         <div class="step ${i === 0 ? 'active' : ''}" data-step=${i + 1}>
@@ -89,7 +91,7 @@ function initSelectEvent() {
 }
 
 function renderFormStepQuestions(questions) {
-    const formStepsWrapper = document.querySelector('.form-steps-wrapper');
+    const formStepsWrapper = document.querySelector('.multistep-form-wrapper .form-steps-wrapper');
     questions.forEach((question, i) => {
         const stepMarkup = `
             <div class="form-step ${i + 1 === 1 ? 'active' : ''}" data-step="${i + 1}">
@@ -219,6 +221,20 @@ function switchStepsHandler(e, btn) {
         }
     }
 }
+
+document.querySelector('.back-to-gender-selection').addEventListener('click', function () {
+    document.querySelector('.multistep-form-wrapper').classList.add('switch-effect');
+    setTimeout(() => {
+        document.querySelector('.multistep-form-wrapper').classList.add('hidden');
+        showFormBtn.classList.add('hidden');
+        genderWrapper.classList.remove('hidden');
+        setTimeout(() => {
+            genderWrapper.classList.remove('switch-effect');
+            document.querySelector('.steps-header .steps-wrapper').innerHTML = '';
+            document.querySelector('.multistep-form-wrapper .form-steps-wrapper').innerHTML = '';
+        }, 200);
+    }, 600);
+})
 
 document.querySelector('.move-to-next-step-btn').addEventListener('click', function (e) {
     switchStepsHandler(e, this);

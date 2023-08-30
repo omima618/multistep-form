@@ -133,6 +133,25 @@ a {
 .hidden {
     display: none;
 }
+.back-to-gender-selection {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: end;
+    color: #dd7239;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+.back-to-gender-selection svg {
+    padding-inline-start: 2px;
+    width: 10px;
+    height: 10px;
+}
+.back-to-gender-selection svg path{
+    fill: #dd7239;
+}
 .steps-header {
     margin: 0 0 5px;
     padding: 15px 5px;
@@ -311,6 +330,9 @@ a {
     box-shadow: 0 0 10px 0 #a15e3a76;
     border-radius: 25px;
     transition: 0.5s;
+}
+.preferences-test-done.hidden {
+    display: none;
 }
 .preferences-test-done .result-wrapper {
     display: flex;
