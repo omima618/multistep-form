@@ -23,7 +23,7 @@ showFormBtn.addEventListener('click', () => {
     }, 300);
     setTimeout(() => {
         getStepsHandler(showFormBtn.dataset.selectedGender);
-    }, 500);
+    }, 400);
 });
 
 function renderStepsHeader(questions) {
@@ -107,7 +107,7 @@ function renderFormStepQuestions(questions) {
     document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
     setTimeout(() => {
         document.querySelector('.multistep-form-wrapper').classList.remove('switch-effect');
-    }, 500);
+    }, 200);
 }
 
 function renderProducts(product) {
@@ -126,7 +126,7 @@ function renderProducts(product) {
 }
 
 function getStepsHandler(gender) {
-    var MSF_fetchStepsRes = fetch('data/steps.json');
+    const MSF_fetchStepsRes = fetch('data/steps.json');
     MSF_fetchStepsRes.then(function (res) {
         return res.json();
     }).then(function (data) {
@@ -136,7 +136,7 @@ function getStepsHandler(gender) {
 }
 
 function getProductsHandler(gender) {
-    var MSF_fetchProductsRes = fetch('data/products.json');
+    const MSF_fetchProductsRes = fetch('data/products.json');
     MSF_fetchProductsRes.then(function (res) {
         return res.json();
     }).then(function (data) {
