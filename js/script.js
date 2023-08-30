@@ -146,6 +146,7 @@ function getProductsHandler(gender) {
         const randomProduct = products[Math.floor(Math.random()*products.length)];
         document.querySelector('.preferences-test-done .products-container').insertAdjacentHTML('beforeend', renderProducts(randomProduct));
         document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
+        document.querySelector('.preferences-test-done').classList.remove('hidden');
         setTimeout(() => {
             document.querySelector('.preferences-test-done').classList.remove('switch-effect');
         }, 600);
