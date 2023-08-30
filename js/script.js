@@ -1,31 +1,30 @@
-function renderProducts(product) {
-    const productMarkup = `
-    <div class="product-wrapper">
-        <a href="${product.link}" class="product-img">
-            <img src="${product.image}" alt="${product.title}">
-        </a>
-        <div class="links-wrapper">
-            <a class="product-title" target="_blank" href="${product.link}">${product.title}</a>
-            <a class="see-more"  target="_blank" href="${product.link}">المزيد عن العطر</a>
-        </div>
-    </div>
-    `;
-    return productMarkup;
-}
+const genderWrapper = document.querySelector('.gender-selection');
+const genderOptions = document.querySelectorAll('.gender-selection .gender');
+const showFormBtn = document.querySelector('.gender-selection .show-form');
 
-function getProductsHandler() {
-    var MSF_fetchProductsRes = fetch('data/products.json');
-    MSF_fetchProductsRes.then(function (res) {
-        return res.json();
-    }).then(function (data) {
-        const randomProduct = data.products[Math.floor(Math.random()*data.products.length)];
-        document.querySelector('.preferences-test-done .products-container').insertAdjacentHTML('beforeend', renderProducts(randomProduct));
-        document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
+genderOptions.forEach((gender, i) => {
+    gender.addEventListener('click', function () {
+        i === 0 ? genderOptions[i + 1].classList.remove('selected') : genderOptions[i - 1].classList.remove('selected');
+        this.classList.add('selected');
+        showFormBtn.dataset.selectedGender = this.dataset.gender;
+        showFormBtn.classList.remove('hidden');
+        window.scroll({ top: showFormBtn.getBoundingClientRect().top + 50, behavior: 'smooth' });
+        showFormBtn.classList.add('animate');
         setTimeout(() => {
-            document.querySelector('.preferences-test-done').classList.remove('switch-effect');
-        }, 600);
+            showFormBtn.classList.remove('animate');
+        }, 1200);
     });
-}
+})
+
+showFormBtn.addEventListener('click', () => {
+    genderWrapper.classList.add('switch-effect');
+    setTimeout(() => {
+        genderWrapper.classList.add('hidden');
+    }, 300);
+    setTimeout(() => {
+        getStepsHandler(showFormBtn.dataset.selectedGender);
+    }, 400);
+});
 
 function renderStepsHeader(questions) {
     const steps = questions.map((question) => {
@@ -111,21 +110,49 @@ function renderFormStepQuestions(questions) {
     }, 300);
 }
 
-function getStepsHandler() {
+function renderProducts(product) {
+    const productMarkup = `
+    <div class="product-wrapper">
+        <a href="${product.link}" class="product-img">
+            <img src="${product.image}" alt="${product.title}">
+        </a>
+        <div class="links-wrapper">
+            <a class="product-title" target="_blank" href="${product.link}">${product.title}</a>
+            <a class="see-more"  target="_blank" href="${product.link}">المزيد عن العطر</a>
+        </div>
+    </div>
+    `;
+    return productMarkup;
+}
+
+function getStepsHandler(gender) {
     var MSF_fetchStepsRes = fetch('data/steps.json');
     MSF_fetchStepsRes.then(function (res) {
         return res.json();
     }).then(function (data) {
-        renderStepsHeader(data.questions);
-        renderFormStepQuestions(data.questions);
+        renderStepsHeader(data.questions[gender]);
+        renderFormStepQuestions(data.questions[gender]);
     });
 }
 
-getStepsHandler();
+function getProductsHandler(gender) {
+    var MSF_fetchProductsRes = fetch('data/products.json');
+    MSF_fetchProductsRes.then(function (res) {
+        return res.json();
+    }).then(function (data) {
+        const products = data.products[gender];
+        const randomProduct = products[Math.floor(Math.random()*products.length)];
+        document.querySelector('.preferences-test-done .products-container').insertAdjacentHTML('beforeend', renderProducts(randomProduct));
+        document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
+        setTimeout(() => {
+            document.querySelector('.preferences-test-done').classList.remove('switch-effect');
+        }, 600);
+    });
+}
 
 function submitAndGetResult(e) {
     e.preventDefault();
-    getProductsHandler();
+    getProductsHandler(showFormBtn.dataset.selectedGender);
     document.querySelector('.multistep-form-wrapper').classList.add('switch-effect');
     setTimeout(() => {
         document.querySelector('.multistep-form-wrapper').classList.add('hidden');
@@ -168,11 +195,11 @@ function switchStepsHandler(e, btn) {
                 formContainer.classList.remove('switch-effect');
             }, 500);
         } else {
-            window.scroll({ top: buttonsWrapper.getBoundingClientRect().bottom, behavior: 'smooth' });
+            window.scroll({ top: buttonsWrapper.getBoundingClientRect().top + 50, behavior: 'smooth' });
             buttonsWrapper.querySelector('.submit-form-btn').classList.add('animate');
             setTimeout(() => {
                 buttonsWrapper.querySelector('.submit-form-btn').classList.remove('animate');
-            }, 1200)
+            }, 1200);
         }
     } else {
         if (currentStepNum > 1) {

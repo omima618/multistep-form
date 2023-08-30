@@ -4,12 +4,20 @@
         margin: 10px auto;
         padding: 10px;
     }
+    .main-heading {
+        font-size: 45px;
+        margin-bottom: 45px;
+    }
 }
 @media (max-width: 768px) {
     .container {
         width: 100%;
         margin: 10px auto;
         padding: 10px;
+    }
+    .main-heading {
+        font-size: 40px;
+        margin-bottom: 40px;
     }
     .steps-header {
         margin: 0;
@@ -55,6 +63,24 @@
     }
 }
 @media (max-width: 500px) {
+    .main-heading {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+    .gender-options {
+        gap: 25px;
+    }
+    .gender-selection h2 {
+        font-size: 30px;
+    }
+    .gender-selection .show-form {
+        width: 100%;
+        min-width: 200px;
+        max-width: 350px;
+    }
+    .gender-options span {
+        font-size: 20px;
+    }
     .steps-header .steps-wrapper .step.active .step-icon {
         width: 35px;
         height: 35px;
