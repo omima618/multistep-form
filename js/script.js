@@ -23,7 +23,7 @@ showFormBtn.addEventListener('click', () => {
     }, 300);
     setTimeout(() => {
         getStepsHandler(showFormBtn.dataset.selectedGender);
-    }, 400);
+    }, 500);
 });
 
 function renderStepsHeader(questions) {
@@ -107,7 +107,7 @@ function renderFormStepQuestions(questions) {
     document.querySelector('.multistep-form-wrapper').classList.remove('hidden');
     setTimeout(() => {
         document.querySelector('.multistep-form-wrapper').classList.remove('switch-effect');
-    }, 300);
+    }, 500);
 }
 
 function renderProducts(product) {
