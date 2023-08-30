@@ -14,9 +14,21 @@ a {
     color: inherit;
     text-decoration: none;
 }
-.container {
+.user-preferencesform-container {
     width: 80%;
     margin: 50px auto;
+}
+::-webkit-scrollbar {
+    width: 7px !important;
+}
+::-webkit-scrollbar-track {
+    background: #f1d9ca !important;
+}
+::-webkit-scrollbar-thumb {
+    background: #dd7239cd !important;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #dd7239 !important;
 }
 .main-heading {
     font-size: 50px;
