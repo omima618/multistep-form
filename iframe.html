@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .multistep-form-iframe-container {
+            width: 100vw;
+            min-height: 100vh;
+            overflow: hidden;
+            z-index: 999999;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0000009c;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .multistep-form-iframe-container.is-hidden {
+            display: none !important;
+        }
+        .multistep-form-iframe-container .close-multistep-form-iframe{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: calc(25px - 15px);
+            inset-inline-start: calc(95% - 25px);
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            color: #d46529;
+            background-color: #fff;
+            font-size: 14px;
+            border: 0;
+            outline: 0;
+            font-weight: bold;
+            box-shadow: 0 0 5px 0 #70462e76;
+            border-radius: 50%;
+        }
+        .multistep-form-iframe-container iframe {
+            background-color: #fff;
+            width: 90%;
+            margin: 25px 0;
+            height: calc(100% - 50px);
+            border-radius: 25px;
+        }
+        @media (max-width: 500px) {
+            .multistep-form-iframe-container iframe {
+                width: 95%;
+            }
+            .multistep-form-iframe-container .close-multistep-form-iframe{
+                top: calc(25px - 5px);
+                inset-inline-start: calc(97.5% - 30px);
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="multistep-form-iframe-container">
+        <button class="close-multistep-form-iframe">&#10006;</button>
+        <iframe src="https://omima618.github.io/multistep-form/" frameborder="0">
+        </iframe>
+    </div>
+    <script>
+        document.querySelector('.close-multistep-form-iframe').addEventListener('click', function (e) { 
+            e.preventDefault();
+            this.closest('.multistep-form-iframe-container').classList.add('is-hidden');
+        });
+    </script>
+</body>
+</html>
